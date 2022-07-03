@@ -1,8 +1,8 @@
 <?php
 $hname='localhost';
-$uname='root';
-$pass='root';
-$db='real_estate';
+$uname='angel';
+$pass='lcKEOOoTbHwiRed';
+$db='angel';
 
 $con= mysqli_connect($hname,$uname,$pass,$db);
 ?>
@@ -13,10 +13,10 @@ $query=mysqli_query($con,$sql);
 
 if(mysqli_num_rows($query)>0)
 {
-    while ($rows=mysqli_fetch_assoc($query)) {
-        $property_id=$rows['property_id'];
+while ($rows=mysqli_fetch_assoc($query)) {
+$property_id=$rows['property_id'];
 
-        ?>
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -54,26 +54,26 @@ content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=
 <div class="collapse navbar-collapse flex-column align-items-stretch mt-2" id="filter">
 <div class="border">
 <div class="border bg-light p-3 rounded mb-3">
- <h5 class="mb-3" style="font-size: 18px">CHECK</h5>
-     <label class="form-label">Check-in</label>
-     <input type="date" class="form-control shadow-none mb-3">
- <label class="form-label">Check-out</label>
- <input type="date" class="form-control shadow-none">
+<h5 class="mb-3" style="font-size: 18px">CHECK</h5>
+<label class="form-label">Check-in</label>
+<input type="date" class="form-control shadow-none mb-3">
+<label class="form-label">Check-out</label>
+<input type="date" class="form-control shadow-none">
 </div>
 <div class="border bg-light p-3 rounded mb-3">
- <h5 class="mb-3" style="font-size: 18px">FACILITIES</h5>
- <div class="mb-2">
-     <input type="checkbox" id="f1" class="form-check-input shadow-none me-1">
-     <label class="form-check-label" for="f1">Facility one</label>
- </div>
- <div class="mb-2">
-     <input type="checkbox" id="f2" class="form-check-input shadow-none me-1">
-     <label class="form-check-label" for="f2">Facility two</label>
- </div>
- <div class="mb-2">
-     <input type="checkbox" id="f3" class="form-check-input shadow-none me-1">
-     <label class="form-check-label" for="f3">Facility three</label>
- </div>
+<h5 class="mb-3" style="font-size: 18px">FACILITIES</h5>
+<div class="mb-2">
+<input type="checkbox" id="f1" class="form-check-input shadow-none me-1">
+<label class="form-check-label" for="f1">Facility one</label>
+</div>
+<div class="mb-2">
+<input type="checkbox" id="f2" class="form-check-input shadow-none me-1">
+<label class="form-check-label" for="f2">Facility two</label>
+</div>
+<div class="mb-2">
+<input type="checkbox" id="f3" class="form-check-input shadow-none me-1">
+<label class="form-check-label" for="f3">Facility three</label>
+</div>
 
 
 <div class="border bg-light p-3 rounded mb-3">
@@ -97,7 +97,7 @@ content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=
 </div></div>-->
 
 <!--
-    <div class="col-lg-12 col-md-12 px-4">
+<div class="col-lg-12 col-md-12 px-4">
 <div class="card mb-4 border-0 shadow">
 <div class="row g-0 p-3 align-items-center">
 <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
@@ -236,16 +236,7 @@ AC
 <!--Footer-->
 <?php require('all/footer.php');?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-<!-- Initialize Swiper -->
-<script>
-var swiper = new Swiper(".swiper-container", {
-spaceBetween: 30,
-effect: "fade",
-loop:true,
-autoplay:{delay:3500, disableOnInteraction:false,}
-});
-</script>
+
 <?php
 }}
 ?>

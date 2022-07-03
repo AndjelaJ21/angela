@@ -1,35 +1,34 @@
 <?php /*
 
 if (isset($_POST['submit'])) {
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = mysqli_real_escape_string($conn, md5($_POST['password']));
+$email = mysqli_real_escape_string($conn, $_POST['email']);
+$password = mysqli_real_escape_string($conn, md5($_POST['password']));
 
-    $sql = "SELECT * FROM users WHERE email='{$email}' AND password='{$password}'";
-    $result = mysqli_query($conn, $sql);
+$sql = "SELECT * FROM users WHERE email='{$email}' AND password='{$password}'";
+$result = mysqli_query($conn, $sql);
 
-    if (mysqli_num_rows($result) === 1) {
-        $row = mysqli_fetch_assoc($result);
+if (mysqli_num_rows($result) === 1) {
+$row = mysqli_fetch_assoc($result);
 
-        if (empty($row['code'])) {
-            $_SESSION['SESSION_EMAIL'] = $email;
-            header("Location: index.php");
-        } else {
-            $msg = "<div class='alert alert-info'>First verify your account and try again.</div>";
-        }
-    } else {
-        $msg = "<div class='alert alert-danger'>Email or password do not match.</div>";
-    }
+if (empty($row['code'])) {
+$_SESSION['SESSION_EMAIL'] = $email;
+header("Location: index.php");
+} else {
+$msg = "<div class='alert alert-info'>First verify your account and try again.</div>";
+}
+} else {
+$msg = "<div class='alert alert-danger'>Email or password do not match.</div>";
+}
 }*/
 
-$hname = 'localhost';
-$uname = 'root';
-$pass = 'root';
-$db = 'real_estate';
-
+$hname='localhost';
+$uname='angel';
+$pass='lcKEOOoTbHwiRed';
+$db='angel';
 $con = mysqli_connect($hname, $uname, $pass, $db);
 ?>
 
-    </div>
+</div>
 <!doctype html>
 <html lang="en">
 <head>
@@ -161,7 +160,7 @@ AC
 </div>
 <!--
 <div class="d-flex justify-content-evenly mb-2">
-    <a href="#" class="btn btn-sm text-white bg-primary shadow-none">Book Now</a>
+<a href="#" class="btn btn-sm text-white bg-primary shadow-none">Book Now</a>
 <a href="#" class="btn btn-sm btn-outline-dark shadow-none">More details</a>
 </div>-->
 </div>
@@ -315,9 +314,9 @@ AC
 
 <div class="bg-white p-4 rounded mb-4">
 <h5>Follow us</h5>
-    <?php
-    if ($contact_r['tw']!=''){
-        echo<<<data
+<?php
+if ($contact_r['tw']!=''){
+echo<<<data
 <a href="$contact_r[tw]" class="d-inline-block mb-3">
 <span class="badge bg-light text-dark fs-6 p-2">
 <i class="bi bi-twitter me-1"></i> Twitter
@@ -325,29 +324,29 @@ AC
 </a>
 <br>
 data;
-    }
-    ?>
+}
+?>
 
-    <?php
-    echo<<<data
+<?php
+echo<<<data
 <a href="$contact_r[fb]" class="d-inline-block mb-3">
 <span class="badge bg-light text-dark fs-6 p-2">
 <i class="bi bi-facebook me-1"></i>Facebook
 </span>
-    </a><br>
+</a><br>
 data;
 
-    ?>
-   <?php
-   echo<<<data
- <a href="$contact_r[insta]" class="d-inline-block">
+?>
+<?php
+echo<<<data
+<a href="$contact_r[insta]" class="d-inline-block">
 <span class="badge bg-light text-dark fs-6 p-2">
 <i class="bi bi-instagram me-1"?></i>Instagram
 </span>
-    </a>
+</a>
 data;
 
-   ?>
+?>
 </div>
 
 

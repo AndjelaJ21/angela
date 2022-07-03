@@ -1,8 +1,8 @@
 <?php
 $hname='localhost';
-$uname='root';
-$pass='root';
-$db='real_estate';
+$uname='angel';
+$pass='lcKEOOoTbHwiRed';
+$db='angel';
 
 $con= mysqli_connect($hname,$uname,$pass,$db);
 require ('inc/essentials.php');
@@ -39,7 +39,7 @@ content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=
 <td>Action</td>
 </tr>
 </thead>
-    <tbody>
+<tbody>
 
 
 
@@ -48,7 +48,7 @@ $query="select * from revieww where status='no' order by review_id asc";
 $result=mysqli_query($con,$query);
 while ($row = mysqli_fetch_array($result)){
 
-    echo<<<query
+echo<<<query
 <tr>
 <td>$row[review_id]</td>
 <td>$row[comment]</td>
@@ -57,7 +57,7 @@ while ($row = mysqli_fetch_array($result)){
 <td>$row[status]</td>
 
 
-  
+
 
 <td>
 <form action="coms.php" method="POST">
@@ -71,9 +71,9 @@ while ($row = mysqli_fetch_array($result)){
 
 </tr>
 query;
-    }
-    ?>
-    </tbody>
+}
+?>
+</tbody>
 </table>
 
 

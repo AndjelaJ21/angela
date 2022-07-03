@@ -1,72 +1,63 @@
 <?php
 session_start();
 isset($_SESSION["email"]);
-
-$db = new mysqli('localhost','root','root','real_estate');
-
-if($db->connect_error){
-    echo "Error connecting database";
-}
-
-
 ?>
 
 <?php
 include('review-engine.php');
 
-
 $hname='localhost';
-$uname='root';
-$pass='root';
-$db='real_estate';
+$uname='angel';
+$pass='lcKEOOoTbHwiRed';
+$db='angel';
 
 $con= mysqli_connect($hname,$uname,$pass,$db);
 
 if($con->connect_error){
-    echo "Error connecting database";
+echo "Error connecting database";
 }
 ?>
 
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
 
-            .card {
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-                max-width: 100%;
-                min-width: 100%;
-                margin: auto;
-                text-align: center;
-                font-family: arial;
-                display: inline;
-            }
+.card {
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+max-width: 100%;
+min-width: 100%;
+margin: auto;
+text-align: center;
+font-family: arial;
+display: inline;
+}
 
-            .card:hover {
-                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-                opacity: 0.8;
-            }
+.card:hover {
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+opacity: 0.8;
+}
 
-            .container {
-                padding: 2px 16px;
-            }
+.container {
+padding: 2px 16px;
+}
 
-            .btn {
-                width: 100%;
-            }
+.btn {
+width: 100%;
+}
 
-            .image {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                min-width: 20%;
-                min-height: 200px;
-                max-width: 30%;
-                max-height:200px;
-            }
-        </style>
-    </head>
+.image {
+display: block;
+margin-left: auto;
+margin-right: auto;
+min-width: 20%;
+min-height: 200px;
+max-width: 30%;
+max-height:200px;
+}
+</style>
+</head>
 <body>
 <?php
 $u_email=$_SESSION['SESSION_EMAIL'];
@@ -77,56 +68,56 @@ echo '<center><h1>Booked Properties</h1></center>';
 
 if(mysqli_num_rows($result3)>0)
 {
-    while($rowss=mysqli_fetch_assoc($result3)){
-        $tenant_id=$rowss['tenant_id'];
+while($rowss=mysqli_fetch_assoc($result3)){
+$tenant_id=$rowss['tenant_id'];
 
-        $sql1="SELECT * FROM booking where tenant_id='$tenant_id'";
-        $query1=mysqli_query($con,$sql1);
-        if(mysqli_num_rows($query1)>0)
-        {
-            while ($ro=mysqli_fetch_assoc($query1)) {
-                $prop_id=$ro['property_id'];
+$sql1="SELECT * FROM booking where tenant_id='$tenant_id'";
+$query1=mysqli_query($con,$sql1);
+if(mysqli_num_rows($query1)>0)
+{
+while ($ro=mysqli_fetch_assoc($query1)) {
+$prop_id=$ro['property_id'];
 
-                $sql="SELECT * FROM property where property_id='$prop_id'";
-                $query=mysqli_query($con,$sql);
-                if(mysqli_num_rows($query)>0)
-                {
-                    while ($rows=mysqli_fetch_assoc($query)) {
-                        $property_id=$rows['property_id'];
+$sql="SELECT * FROM property where property_id='$prop_id'";
+$query=mysqli_query($con,$sql);
+if(mysqli_num_rows($query)>0)
+{
+while ($rows=mysqli_fetch_assoc($query)) {
+$property_id=$rows['property_id'];
 
-                        ?>
+?>
 
-                        <div class="col-sm-2">
-                            <div class="card">
-                                <?php
-
-
-                                $sql2="SELECT * FROM property where property_id='$property_id'";
-                                $query2=mysqli_query($con,$sql2);
-
-                                if(mysqli_num_rows($query2)>0)
-                                {
-                                    $row=mysqli_fetch_assoc($query2);
-                                    $photo=$row['picture'];
-                                    echo  '<img class="image" src="images/'.$photo.'">'; }?>
-
-                                <h4><b><?php echo $rows['property_type']; ?></b></h4>
-                                <p><?php echo $rows['city'].', '.$rows['district'] ?></p>
-                                <p><?php echo '<a href="view_propertyy.php?property_id='.$rows['property_id'].'"  class="btn btn-lg btn-primary btn-block" >View Property </a><br>'; ?></p><br>
-                            </div>
-                        </div>
-
-                        </body>
-                        </html>
+<div class="col-sm-2">
+<div class="card">
+<?php
 
 
-                        <?php
+$sql2="SELECT * FROM property where property_id='$property_id'";
+$query2=mysqli_query($con,$sql2);
 
-                    }
-                }
+if(mysqli_num_rows($query2)>0)
+{
+$row=mysqli_fetch_assoc($query2);
+$photo=$row['picture'];
+echo  '<img class="image" src="images/'.$photo.'">'; }?>
 
-                else{
-                    echo "<center><h3>Searched Property not found...</h3></center>";
-                }
-            }}}}
+<h4><b><?php echo $rows['property_type']; ?></b></h4>
+<p><?php echo $rows['city'].', '.$rows['district'] ?></p>
+<p><?php echo '<a href="view_propertyy.php?property_id='.$rows['property_id'].'"  class="btn btn-lg btn-primary btn-block" >View Property </a><br>'; ?></p><br>
+</div>
+</div>
+
+</body>
+</html>
+
+
+<?php
+
+}
+}
+
+else{
+echo "<center><h3>Searched Property not found...</h3></center>";
+}
+}}}}
 ?>

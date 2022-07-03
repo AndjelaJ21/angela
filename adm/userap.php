@@ -1,8 +1,8 @@
 <?php
 $hname='localhost';
-$uname='root';
-$pass='root';
-$db='real_estate';
+$uname='angel';
+$pass='lcKEOOoTbHwiRed';
+$db='angel';
 
 $con= mysqli_connect($hname,$uname,$pass,$db);
 require ('inc/essentials.php');
@@ -30,7 +30,7 @@ content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=
 
 <div class="card border-0 shadow-sm mb-4">
 <div class="card-body">
-    <div class="text-end mb-4">
+<div class="text-end mb-4">
 <div class="table-responsive">
 <table class="table table-hover border text-center" style="min-width: 1300px;">
 <thead class="sticky-top">
@@ -48,25 +48,25 @@ while ($row = mysqli_fetch_array($result)){
 
 
 
-    echo<<<query
+echo<<<query
 <tr>
 <td>$row[id]</td>
 <td>$row[name]</td>
 <td>$row[email]</td>
 <td>
-    <form action="userap.php" method="POST">
-        <input type="hidden" name="id" value="$row[id];?>"/>
-        <input type="submit" name="approval" value="Approval"/>
-        <input type="submit" name="deny" value="Deny"/>
+<form action="userap.php" method="POST">
+<input type="hidden" name="id" value="$row[id];?>"/>
+<input type="submit" name="approval" value="Approval"/>
+<input type="submit" name="deny" value="Deny"/>
 
-    </form>
+</form>
 </td>
 
 
 </tr>
 query;
-    }
-    ?>
+}
+?>
 </tbody>
 </table>
 

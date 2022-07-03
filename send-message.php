@@ -1,8 +1,8 @@
 <?php
 $hname='localhost';
-$uname='root';
-$pass='root';
-$db='real_estate';
+$uname='angel';
+$pass='lcKEOOoTbHwiRed';
+$db='angel';
 
 $con= mysqli_connect($hname,$uname,$pass,$db);
 session_start();

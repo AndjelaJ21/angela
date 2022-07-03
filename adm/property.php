@@ -1,8 +1,8 @@
 <?php
 $hname='localhost';
-$uname='root';
-$pass='root';
-$db='real_estate';
+$uname='angel';
+$pass='lcKEOOoTbHwiRed';
+$db='angel';
 
 $con= mysqli_connect($hname,$uname,$pass,$db);
 require ('inc/essentials.php');
@@ -30,7 +30,7 @@ content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=
 
 <div class="card border-0 shadow-sm mb-4">
 <div class="card-body">
-    <div class="text-end mb-4">
+<div class="text-end mb-4">
 <div class="table-responsive">
 <table class="table table-hover border text-center" style="min-width: 1300px;">
 <thead class="sticky-top">
@@ -39,19 +39,19 @@ content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=
 <th scope="col">Picture</th>
 <th scope="col">City</th>
 <th scope="col">District</th>
-    <th scope="col">Contact</th>
-    <th scope="col">Type</th>
-    <th scope="col">Price</th>
-    <th scope="col">Total rooms</th>
-    <th scope="col">Bedroom</th>
-    <th scope="col">Living room</th>
-    <th scope="col">Kitchen</th>
-    <th scope="col">Bathroom</th>
-    <th scope="col">Booked</th>
-    <th scope="col">Description</th>
-    <th scope="col">Id</th>
-    <th scope="col">Action</th>
-    <th scope="col">Status</th>
+<th scope="col">Contact</th>
+<th scope="col">Type</th>
+<th scope="col">Price</th>
+<th scope="col">Total rooms</th>
+<th scope="col">Bedroom</th>
+<th scope="col">Living room</th>
+<th scope="col">Kitchen</th>
+<th scope="col">Bathroom</th>
+<th scope="col">Booked</th>
+<th scope="col">Description</th>
+<th scope="col">Id</th>
+<th scope="col">Action</th>
+<th scope="col">Status</th>
 
 
 
@@ -66,7 +66,7 @@ while ($row = mysqli_fetch_array($result)){
 
 
 
-    echo<<<query
+echo<<<query
 <tr>
 <td>$row[property_id]</td>
 <td>$row[picture]</td>
@@ -89,19 +89,19 @@ while ($row = mysqli_fetch_array($result)){
 
 
 <td>
-    <form action="userap.php" method="POST">
-        <input type="hidden" name="id" value="$row[property_id];?>"/>
-        <input type="submit" name="approval" value="Approval"/>
-        <input type="submit" name="deny" value="Deny"/>
+<form action="userap.php" method="POST">
+<input type="hidden" name="id" value="$row[property_id];?>"/>
+<input type="submit" name="approval" value="Approval"/>
+<input type="submit" name="deny" value="Deny"/>
 
-    </form>
+</form>
 </td>
 
 
 </tr>
 query;
-    }
-    ?>
+}
+?>
 </tbody>
 </table>
 
@@ -118,10 +118,10 @@ query;
 <?php
 /*
 if (isset($_POST['approval'])){
-    $id=$_POST['id'];
-    $select="update add_property set status='approved' where property_id='$id'";
-    $result=mysqli_query($con,$select);
-    echo '<script  type="text/javascript">';
+$id=$_POST['id'];
+$select="update add_property set status='approved' where property_id='$id'";
+$result=mysqli_query($con,$select);
+echo '<script  type="text/javascript">';
 echo 'alert("Approved!")';
 echo 'window.location.href="property.php"';
 echo '</script>';}*/

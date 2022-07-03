@@ -1,8 +1,8 @@
 <?php
 $hname='localhost';
-$uname='root';
-$pass='root';
-$db='real_estate';
+$uname='angel';
+$pass='lcKEOOoTbHwiRed';
+$db='angel';
 
 $con= mysqli_connect($hname,$uname,$pass,$db);
 require ('inc/essentials.php');
@@ -100,10 +100,10 @@ content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=
 <th scope="col">#</th>
 <th scope="col">Name</th>
 <th scope="col">Email</th>
-    <th scope="col">Code</th>
-    <th scope="col">Verified</th>
-    <th scope="col">Status</th>
-    <th scope="col">Action</th>
+<th scope="col">Code</th>
+<th scope="col">Verified</th>
+<th scope="col">Status</th>
+<th scope="col">Action</th>
 
 
 
